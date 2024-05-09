@@ -6,13 +6,14 @@
 
 
 ### Assignments  
--  → [**Assignment 1**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/project1)
+-  → [**Assignment 0**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/Assignment%200)
+<br> Simulates a conversation between two chatbots according to predefined rules and patterns.
 <br><br>
--  → [**Assignment 2**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/project2) 
+-  → [**Assignment 1**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/Assignment%201) 
 <br><br>
--  → [**Assignment 3**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/project3)
+-  → [**Assignment 2**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/Assignment%202)
 <br><br>
--  → [**Assignment 4**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/project4)
+-  → [**Assignment 3**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/Assignment%203)
 <br><br>
--  → [**Assignment 5**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/project5)
+-  → [**Assignment 4**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/Assignment%204)
 <br><br>
