@@ -8,14 +8,11 @@
 ### Assignments  
 -  → [**Assignment 1**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/project1)
 <br><br>
--  → [**Assignment 2**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/project2)
-<br> 
+-  → [**Assignment 2**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/project2) 
 <br><br>
 -  → [**Assignment 3**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/project3)
-<br> 
 <br><br>
 -  → [**Assignment 4**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/project4)
-<br> 
 <br><br>
 -  → [**Assignment 5**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/project5)
-<br>
+<br><br>
