@@ -13,8 +13,9 @@
 <br> implements a tournament of Tic-Tac-Toe games on an n×n board, where players can be human or automatic.
 <br><br>
 -  → [**Assignment 2**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/Assignment%202)
+<br> Bricker game implementation using DanoGameLab Library 
 <br><br>
--  → [**Assignment 3**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/Assignment%203)
-<br><br>
+
 -  → [**Assignment 4**](https://github.com/neriabd/Object-Oriented-Programming/tree/main/Assignment%204)
+<br> Flying Avatar: A 2D Platformer Game using DanoGameLab Library
 <br><br>
