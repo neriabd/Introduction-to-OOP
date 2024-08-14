@@ -1,0 +1,149 @@
+neriyabd
+206698581
+
+Answers:
+1. I selected the first option of sending the method gameobjects to the constructor of collision strategy.
+   Through the collision strategy class I implemented the removal of a brick in every collision 
+   that inherit from collision strategy.
+   I chose to use collision strategy as inheritance instead of interface so it will be responsible 
+   for the removal of the  bricks and decrementing the brick count so I will not have to rewrite this 
+   code at each strategy.
+
+   Advantage:
+-	By passing only the gameObjects method to the CollisionStrategy constructor, we ensure that the
+	game object management logic is encapsulated within the GameManager. This approach maintains a clear
+	separation of responsibilities:
+
+	only the GameManager class has direct access to its methods, ensuring that game management logic
+	remains only in the gameManager class.
+	This approach prevents the CollisionStrategy and its sub classes from directly interacting with
+	GameManager public methods, which can help avoid unexpected behaviors and reduce the complexity of
+	debugging since the only object that will have responsibility and access to the logic is
+	the GameManager.
+
+   Disadvantages:
+	Through implementing it this way we expose the CollisionStrategy to the implementation of
+	removing and interacting with gameObjects.
+	Using the second method, with sending the GameManager, we give the CollisionStrategy
+	only the API to remove Game Objects that it gets from the Game Manager.
+
+
+2. In order to present the numeric and graphic live representation I created the following 3 classes,
+    2 for graphic live and 1 for numeric life.
+
+   Graphic Life Representation:
+	In order to implement this I created a method that is called upon on every update to a
+	GameObject that synchronize between the player life counter and the hearts presented on screen.
+	This synchronization is implemented through an array that contains the heart objects that are
+	in the game. through that array it's easy to delete and add hearts objects to the display.
+
+	Heart Class: This class extends GameObject and is responsible for the attributes of a single heart
+	object. This class only has constructor to determine its placement, image
+	representation and dimensions.
+
+    GraphicLife Class: This class extends GameObject and is responsible to place Heart Objects
+        to the screen based on player current life.
+
+    Constructor: The constructor gets the counter life of the user, and initializes an
+        array of hearts objects and set up hearts according to the counter life.
+
+    Public Methods: update - this method overrides the GameObject update method and is
+        calling updateGraphicLives which adds and subtract heart objects to the screen based on
+        player current life amount in order to maintain synchronization between those two features.
+
+	Splitting between the creation of a heart object and the placements of various hearts on screen
+	helps improves encapsulation between those 2 features.
+
+	
+   Numeric Life Representation:
+	In order to implement this feature I created a class NumericLife that upon every update
+	(overrides from game object) calls a method that change the color and the numeric life text according
+	to a life counter that this class receive to keep track on the number of life a player has.
+
+	NumericLife Class:
+		Constructor: set up the initial life text based on initial life value and the color accordingly
+		update: update the numeric life text at every frame to be synchronized with color and value of
+		current life amount the user has.
+	
+	
+
+3. Special Collision Strategy:
+	ExtraPaddleStrategy: This strategy is implemented by creating an ExtraPaddle which extends
+             the original Paddle which interacts
+             with the user the same as the original Paddle.
+             It also counts the number of collisions it has encountered from the main ball and puck ball
+             (using shouldCollideWith with those 2 objects only).
+             Once 4 collisions occur the ExtraPaddle is removed from the game.
+
+	ExtraPucksStrategy: This strategy is implemented by creating 2 puck balls objects from the puck Class
+	        which extends the Ball
+            class at the center of the brick they encountered (using onCollision methods).
+            The Puck is different from the ball in its representation on the screen and its size,
+            and acts differently in activating certain features using the unique tag
+            he has (which differs from the main ball).
+            The puck also removed from the game if it goes out of boundaries and doesn't cost a
+            life if it goes out of screen.
+
+	
+	CameraChangeStrategy: This strategy is implemented by upon collision checking if the camera isn't
+            following another object and that the collider is the main ball (using the tag of the ball).
+            if the 2 conditions takes place the camera object is set to track the main ball until the
+            ball collided 4 times since the camera has been activated. In order to track
+            4 collisions I use the getCollisionsCounter method of the main ball.
+
+	ExtraLifeStrategy: This strategy is implemented by creating 1 Moving Heart Object that has
+	        100 velocity in the y axis down the screen.
+            Moving Heart class extends the Heart class and is set to a different layer of
+            the display in order that it will be able to collide with other objects.
+            In order for the moving heart to only collide with the main paddle the moving heart overrides
+            the shouldCollideWith method and use the main paddle tag in order to verify this constraint.
+            once the moving heart collided with the paddle or is out of bounds of the window screen it
+            is removed from the game.
+
+
+4. DoubleCollisionStrategy:
+	In order to implement this strategy I used a loop which is going until there can be no more
+	strategies or the last 2 strategies are not double collision strategy.
+
+	steps:
+
+	1. in every iteration of the loop I draw 2 random strategies which only 1 can be double strategy.
+
+	2. if the 2 drawn strategies are not double strategy we add them to the current strategies and
+	   exit the loop.
+	
+	3. if 1 of them is a double strategy we do the following steps:
+		- add the non double strategy drawn to a strategy array.
+		- if there can be more double strategies go over step 1 all over again. if not,
+		  draw 1 non double strategy and add it to the strategy array.
+	
+	through this approach we are able to have amount of at most double strategies as we want according
+	to a max double strategy variable.
+
+	finally, in order to activate once a collision happen we activate all the strategies in the
+	strategy array.
+
+5. Collision Strategy:
+	I changed the CollisionStrategy from interface to a class in order to make it responsible for
+	removing the brick object it has collided (instead of writing it in each collision strategy) and
+	will be also able to decrement the total brick counter.
+ 
+   Brick changes:
+	I added static field to brick in order to count the total amount of bricks in the game.
+	(static because it's not can be associated to an instance of brick but to all bricks object)
+	I added 2 public static methods that gets the value of the static brick counter and decrement it,
+	those changes are set in order that the collision strategy will decrement the brick counter once a
+	collision to a brick has occur. also the game manger use it in order to keep track of current
+	amount of bricks to check for a game win.
+
+   
+
+
+
+
+	
+	
+
+
+
+   
