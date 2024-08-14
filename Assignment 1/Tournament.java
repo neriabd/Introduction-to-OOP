@@ -5,12 +5,12 @@
 public class Tournament {
 
     // Constants Arguments
-    private static final int FIRST_ARG = 2;
-    private static final int SECOND_ARG = 3;
-    private static final int THIRD_ARG = 4;
-    private static final int FOURTH_ARG = 5;
-    private static final int FIFTH_ARG = 6;
-    private static final int SIXTH_ARG = 7;
+    private static final int FIRST_ARG = 0;
+    private static final int SECOND_ARG = 1;
+    private static final int THIRD_ARG = 2;
+    private static final int FOURTH_ARG = 3;
+    private static final int FIFTH_ARG = 4;
+    private static final int SIXTH_ARG = 5;
 
     // Constants Messages
     private static final String INVALID_ARGUMENTS_MESSAGE =
