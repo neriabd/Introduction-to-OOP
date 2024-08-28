@@ -5,7 +5,6 @@ import danogl.components.GameObjectPhysics;
 import danogl.gui.rendering.RectangleRenderable;
 import danogl.util.Vector2;
 import pepse.util.ColorSupplier;
-import pepse.util.Observer;
 
 import static pepse.util.GameConstants.*;
 
@@ -13,10 +12,10 @@ import static pepse.util.GameConstants.*;
  * This class is responsible for the trunk game objects in the game.
  * @author Neriya Ben David
  * @see GameObject
- * @see Observer
+ * @see Runnable
  * @author Neriya Ben David
  */
-public class Trunk extends GameObject implements Observer {
+public class Trunk extends GameObject implements Runnable {
 
     /**
      * Creates a new Trunk object.
@@ -35,7 +34,7 @@ public class Trunk extends GameObject implements Observer {
      * The observer function that is called when the trunk game object is notified by the subject.
      */
     @Override
-    public void performAction() {
+    public void run() {
         changeColor();
     }
 

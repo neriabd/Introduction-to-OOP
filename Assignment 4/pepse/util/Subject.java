@@ -10,13 +10,13 @@ import java.util.Set;
 public class Subject {
 
     // Fields
-    private final Set<Observer> observers = new HashSet<>();
+    private final Set<Runnable> observers = new HashSet<>();
 
     /**
      * Adds an observer to the list of observers.
      * @param observer the observer to add
      */
-    public void addObserver(Observer observer) {
+    public void addObserver(Runnable observer) {
         observers.add(observer);
     }
 
@@ -24,7 +24,7 @@ public class Subject {
      * Removes an observer from the list of observers.
      * @param observer the observer to remove
      */
-    public void removeObserver(Observer observer) {
+    public void removeObserver(Runnable observer) {
         observers.remove(observer);
     }
 
@@ -32,8 +32,8 @@ public class Subject {
      * Notifies all observers in the list of observers and perform the action.
      */
     public void notifyObservers() {
-        for (Observer observer : observers) {
-            observer.performAction();
+        for (Runnable observer : observers) {
+            observer.run();
         }
     }
 }

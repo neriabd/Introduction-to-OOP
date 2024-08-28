@@ -424,7 +424,7 @@ public final class GameConstants {
     /**
      * The variation delta of the leaf color.
      */
-    public static final int COLOR_DELTA_LEAF = 15;
+    public static final int COLOR_DELTA_LEAF = 25;
 
     /**
      * The wind transition duration.
@@ -487,7 +487,7 @@ public final class GameConstants {
     /**
      * The delta variation of the trunk color possible for each trunk.
      */
-    public static final int COLOR_DELTA_TRUNK = 15;
+    public static final int COLOR_DELTA_TRUNK = 20;
 
     /**
      * The minimum height of a trunk.

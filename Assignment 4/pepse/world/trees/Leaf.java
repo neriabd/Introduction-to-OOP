@@ -7,7 +7,6 @@ import danogl.components.Transition;
 import danogl.util.Vector2;
 import danogl.gui.rendering.RectangleRenderable;
 import pepse.util.ColorSupplier;
-import pepse.util.Observer;
 
 import java.util.Random;
 
@@ -16,10 +15,11 @@ import static pepse.util.GameConstants.*;
 /**
  * This class is responsible for the leaf game objects in the game.
  * @author Neriya Ben David
+ * @author Neriya Ben David
  * @see GameObject
- * @see Observer
+ * @see Runnable
  */
-public class Leaf extends GameObject implements Observer {
+public class Leaf extends GameObject implements Runnable {
 
     // Fields
     private static final Random random = new Random(SEED);
@@ -43,7 +43,7 @@ public class Leaf extends GameObject implements Observer {
      * The observer function that is called when the leaf game object is notified by the subject.
      */
     @Override
-    public void performAction() {
+    public void run() {
         rotate90degrees();
     }
 

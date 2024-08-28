@@ -60,7 +60,8 @@ public class Tree {
      * Creates a trunk for the tree.
      */
     private void createTrunk(Vector2 bottomLeftCorner) {
-        int trunkHeight = random.nextInt(MAX_TRUNK_HEIGHT - MIN_TRUNK_HEIGHT + 1) + MIN_TRUNK_HEIGHT;
+        int trunkHeight = random.nextInt(MAX_TRUNK_HEIGHT - MIN_TRUNK_HEIGHT + 1)
+                + MIN_TRUNK_HEIGHT;
 
         // create trunk position and dimensions vectors
         Vector2 topLeftCorner = new Vector2(bottomLeftCorner.x(),

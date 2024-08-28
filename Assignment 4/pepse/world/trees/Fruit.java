@@ -5,17 +5,16 @@ import danogl.collisions.Collision;
 import danogl.components.ScheduledTask;
 import danogl.gui.rendering.OvalRenderable;
 import danogl.util.Vector2;
-import pepse.util.Observer;
 
 import static pepse.util.GameConstants.*;
 
 /**
  * This class is responsible for the fruit game objects in the game.
  * @see GameObject
- * @see Observer
+ * @see Runnable
  * @author Neriya Ben David
  */
-public class Fruit extends GameObject implements Observer {
+public class Fruit extends GameObject implements Runnable {
 
     // Fields
     private int currentColorIndex = -1;
@@ -46,11 +45,11 @@ public class Fruit extends GameObject implements Observer {
         }
     }
 
-    /*
+    /**
      * The observer function that is called when the fruit game object is notified by the subject.
      */
     @Override
-    public void performAction() {
+    public void run() {
         changeColor();
     }
 

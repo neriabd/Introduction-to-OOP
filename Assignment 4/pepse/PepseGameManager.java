@@ -10,7 +10,6 @@ import danogl.gui.WindowController;
 import danogl.gui.rendering.Camera;
 import danogl.util.Vector2;
 import pepse.world.EnergyText;
-import pepse.util.Observer;
 import pepse.util.Subject;
 import pepse.world.*;
 import pepse.world.daynight.Night;
@@ -18,7 +17,6 @@ import pepse.world.daynight.Sun;
 import pepse.world.daynight.SunHalo;
 import pepse.world.trees.Flora;
 import pepse.world.trees.Tree;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -207,14 +205,14 @@ public class PepseGameManager extends GameManager {
      */
     private void createTrunk(Tree tree) {
         gameObjects().addGameObject(tree.getTrunk(), TRUNK_LAYER);
-        avatarJumpEvent.addObserver((Observer) tree.getTrunk());
+        avatarJumpEvent.addObserver((Runnable) tree.getTrunk());
     }
 
     /*
      * Aligns a given float to the nearest size that is divided by block size.
      */
     private int alignToBlockSize(float x) {
-        return (int) (Math.floor((double) x / BLOCK_SIZE) * BLOCK_SIZE);
+        return (int) (Math.ceil((double) x / BLOCK_SIZE) * BLOCK_SIZE);
     }
 
     /*
@@ -224,7 +222,7 @@ public class PepseGameManager extends GameManager {
         for (GameObject object : objects) {
             gameObjects().addGameObject(object, layer);
             if (object.getTag().equals(TAG_FRUIT) || object.getTag().equals(TAG_LEAF)) {
-                avatarJumpEvent.addObserver((Observer) object);
+                avatarJumpEvent.addObserver((Runnable) object);
             }
         }
     }
@@ -234,7 +232,7 @@ public class PepseGameManager extends GameManager {
      */
     private void removeFromSubject(GameObject gameObject) {
         if (gameObject.getTag().equals(TAG_FRUIT) || gameObject.getTag().equals(TAG_LEAF)) {
-            avatarJumpEvent.removeObserver((Observer) gameObject);
+            avatarJumpEvent.removeObserver((Runnable) gameObject);
         }
     }
 
@@ -348,7 +346,6 @@ public class PepseGameManager extends GameManager {
         // add the list of objects to the map according to its block number (block key)
         mapGameObjects.put(minX / BLOCK_SIZE, list);
     }
-
 
     /**
      * The main method of the game - runs the game.
